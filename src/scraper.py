@@ -17,7 +17,6 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
-
 # ---------------------
 # Reddit Loading Function
 # ---------------------
@@ -48,6 +47,20 @@ def scrape_subreddit(subreddit_name, limit=200):
 
     df = pd.DataFrame(posts)
     return df
+
+# ---------------------
+# Reddit Scraper for multiple subreddits
+# ---------------------
+def scrape_subreddits(subreddit_list, limit_per_subreddit=200, pause=2):
+    all_posts = []
+    for subreddit in subreddit_list:
+        print(f"Scraping /r/{subreddit} ...")
+        df = scrape_subreddit(subreddit, limit=limit_per_subreddit)
+        df["subreddit"] = subreddit
+        all_posts.append(df)
+        time.sleep(pause)
+    combined_df = pd.concat(all_posts, ignore_index=True)
+    return combined_df
 
 # ---------------------
 # News Article Scraper
@@ -82,7 +95,10 @@ def save_dataframe(df, name_prefix):
 if __name__ == "__main__":
     os.makedirs("data/raw", exist_ok=True)
 
-    df_reddit = scrape_subreddit("wallstreetbets", limit=200)
+    # List of subreddits to scrape
+    subreddits_to_scrape = ["wallstreetbets", "stocks", "investing", "technology"]
+
+    df_reddit = scrape_subreddits(subreddits_to_scrape, limit_per_subreddit=200)
 
     df_reddit.to_csv("data/raw/reddit_raw.csv", index=False)
 
