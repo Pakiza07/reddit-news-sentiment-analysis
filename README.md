@@ -54,3 +54,6 @@ reddit-news-sentiment-analysis/
 ├── .gitignore # ignored files
 ├── LICENSE # license file
 └── README.md # project documentation
+
+## Dashboard Preview
+![Dashboard Screenshot](assets/dashboard.png)
