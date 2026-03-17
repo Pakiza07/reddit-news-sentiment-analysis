@@ -32,27 +32,27 @@ streamlit run src/dashboard.py
 reddit-news-sentiment-analysis/
 │
 ├── data/
-│   ├── raw/                # raw scraped data
-│   └── cleaned/            # cleaned datasets used for modeling
+│ ├── raw/ # raw scraped data
+│ └── cleaned/ # cleaned datasets used for modeling
 │
 ├── src/
-│   ├── scraper.py          # collects Reddit/news data
-│   ├── prep_data.py        # cleans and preprocesses text
-│   ├── train_model.py      # trains sentiment model
-│   ├── predict.py          # generates sentiment predictions
-│   ├── dashboard.py        # Streamlit dashboard
-│   └── utils.py            # helper functions
+│ ├── scraper.py # collects Reddit/news data
+│ ├── prep_data.py # cleans and preprocesses text
+│ ├── train_model.py # trains sentiment model
+│ ├── predict.py # generates sentiment predictions
+│ ├── dashboard.py # Streamlit dashboard
+│ └── utils.py # helper functions
 │
 ├── outputs/
-│   ├── sentiment_results.csv          # final predictions
-│   ├── sentiment_model_embeddings.pkl # trained classifier
-│   └── embedder.pkl                   # embedding model
+│ ├── sentiment_results.csv # final predictions
+│ ├── sentiment_model_embeddings.pkl # trained classifier
+│ └── embedder.pkl # embedding model
 │
-├── notebooks/            # experiments and analysis
-├── requirements.txt      # project dependencies
-├── .gitignore            # ignored files
-├── LICENSE               # license file
-└── README.md             # project documentation
+├── notebooks/ # experiments and analysis
+├── requirements.txt # project dependencies
+├── .gitignore # ignored files
+├── LICENSE # license file
+└── README.md # project documentation
 
 ## Model Explanation
 
