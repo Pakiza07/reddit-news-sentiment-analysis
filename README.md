@@ -55,5 +55,12 @@ reddit-news-sentiment-analysis/
 ├── LICENSE # license file
 └── README.md # project documentation
 
+## Model Explanation
+
+The sentiment classifier uses **sentence embeddings** generated from a pretrained model.  
+A **Logistic Regression** classifier predicts sentiment labels based on these embeddings.  
+TF-IDF features were also tested for comparison.  
+The pipeline saves predictions and visualizes sentiment trends in the Streamlit dashboard.
+
 ## Dashboard Preview
 ![Dashboard Screenshot](assets/dashboard.png)
